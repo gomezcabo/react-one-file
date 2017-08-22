@@ -14,7 +14,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
-    <!-- App and Components -->
-    <script type="text/babel" src="components/greeting.js"></script>
-    <script type="text/babel" src="app.js"></script>
+    <script type="text/babel">
+        class Greeting extends React.Component {
+            render() {
+                return (<p>{this.props.message}</p>);
+            }
+        }
+
+        ReactDOM.render(
+            <Greeting message='Hello World!!' />,
+            document.getElementById('app')
+        );
+    </script>
 </body>
